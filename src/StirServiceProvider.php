@@ -41,6 +41,9 @@ class StirServiceProvider extends ServiceProvider
             return new Stir($app);
         });
 
+        $this->app->router->aliasMiddleware('admin', \Stir\Http\Middleware\IsAdmin::class);
+        $this->app->router->aliasMiddleware('guest', \Stir\Http\Middleware\RedirectIfAuthenticated::class);
+
     }
 
 
