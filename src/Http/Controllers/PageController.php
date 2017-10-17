@@ -9,7 +9,7 @@ class PageController extends Controller
 {
     public function getWelcome()
     {
-      return view('stir::welcome');
+      return view('stir::page.welcome');
     }
 
     public function getDashboard()
@@ -20,19 +20,19 @@ class PageController extends Controller
     public function getFaqs()
     {
       $faqs = \Stir\Faq::all();
-      return view('stir::faqs')->with([
+      return view('stir::page.faqs')->with([
         'faqs'=>$faqs
         ]);
     }
 
     public function getContact()
     {
-      return view('stir::contact');
+      return view('stir::page.contact');
     }
 
     public function getFeatures()
     {
-      return view('stir::features');
+      return view('stir::page.features');
     }
 
     public function getLogout()
@@ -42,7 +42,7 @@ class PageController extends Controller
 
     public function getLegal()
     {
-      return view('stir::legal');
+      return view('stir::page.legal');
     }
 
 }
