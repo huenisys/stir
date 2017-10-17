@@ -1,7 +1,11 @@
-@extends('stir::master')
+@extends('stir::layout.index')
+
+@section('masthead')
+	@include('stir::master._navbar')
+@endsection
 
 @section('body-container')
-<form method="POST" action="{{ route('password.email') }}">
+<form method="POST" action="{{ route('password.email') }}" class="mt-4">
     {{ csrf_field() }}
     <h2>Reset Password</h2>
     @if (session('status'))
