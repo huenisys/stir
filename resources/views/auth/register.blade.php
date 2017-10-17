@@ -1,8 +1,12 @@
-@extends('stir::master')
+@extends('stir::layout.index')
+
+@section('masthead')
+  @include('stir::layout.navbar.index')
+@endsection
 
 @section('body-container')
 
-<form method="POST" action="{{ route('register') }}">
+<form method="POST" action="{{ route('register') }}" class="mt-4">
     {{ csrf_field() }}
     <h2>Register</h2>
     <hr>

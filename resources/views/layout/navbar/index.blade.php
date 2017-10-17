@@ -7,7 +7,7 @@
 
     <div class="collapse navbar-collapse" id="navbarTop">
 
-      @include('stir::master._navbar.__menu1')
+      @include('stir::layout.navbar._menu1')
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown">
@@ -16,7 +16,7 @@
             @if (Auth::guest())
             <a class="dropdown-item" href="{{ url('/register') }}"><i class="fa fa-id-badge fa-fw" aria-hidden="true"></i> Register</a>
             @endif
-            @include('stir::master._navbar.__menu2Drop')
+            @include('stir::layout.navbar._menu2Drop')
           </div>
         </li>
       @if (Auth::check())
