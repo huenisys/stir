@@ -1,0 +1,29 @@
+{
+    "name": "huenisys/stir",
+    "description": "starter package for Laravel 5.5",
+    "keywords": ["initialization package", "laravel"],
+    "type": "stir-package",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "huenisys",
+            "email": "paul@huenits.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.0.0",
+        "huenisys/stirrer": "dev-master",
+        "illuminate/support": "^5.5"
+    },
+    "autoload": {
+        "classmap": [
+            "database/seeds",
+            "database/factories",
+            "database/migrations"
+        ],
+        "psr-4": {
+            "Stir\\":"src/"
+        }
+    }
+}
