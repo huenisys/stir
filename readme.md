@@ -42,6 +42,7 @@ mix.autoload({
 .sass('resources/stir/assets/sass/app-stir.scss', './public/css')
 .copyDirectory('resources/stir/assets/font-awesome-4.7.0/fonts', 'public/fonts')
 .copyDirectory('resources/stir/assets/img', 'public/img')
+.copyDirectory('resources/stir/assets/favicon', 'public/favicon')
 .sass('resources/stir/assets/font-awesome-4.7.0/scss/font-awesome.scss', './public/css')
 .copy('resources/stir/assets/favicon.ico', 'public/favicon.ico')
 .copy('resources/stir/assets/robots.txt', 'public/robots.txt')
