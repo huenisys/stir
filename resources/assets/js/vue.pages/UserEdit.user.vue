@@ -2,7 +2,7 @@
 	<div>
 		<i  v-show="loading" class="fa fa-spinner fa-spin"></i>
 		<form v-show="!loading">
-				<h2>Editing user #{{user.id}}: {{user.firstname}}</h2>
+				<h2 :inner-data="user.id+' '+user.firstname">Editing profile</h2>
 				<hr>
 
 				<!-- firstname -->
