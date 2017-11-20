@@ -3,7 +3,7 @@
 @section('title', 'FAQs')
 
 @section('body-container')
-    <h3 class="mt-4">Faqs</h3>
+    <h3>Faqs</h3>
     @foreach ($faqs as $faq)
       <h6>{{ $faq->question }}</h6>
       <p>{{ $faq->answer }}</p>

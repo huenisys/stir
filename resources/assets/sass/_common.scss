@@ -1,0 +1,43 @@
+/*force vertical bar all times*/
+body {
+	overflow-y: scroll;/*scrollbar shows all the time*/
+	background-color: #f5f5f5;
+	background-image: url('../img/background.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	padding-bottom: 4.5rem;
+}
+
+/* body wrappers */
+.container.body-container-wrap {
+	background-color: #f5f5f5;
+	background-color: #f5f5f5bf;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+.navbar ~ .body-container-wrap {
+	margin-top:4.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto Mono', monospace;
+	font-weight:bold;
+}
+.navbar-brand {
+	font-family: 'Roboto Mono', monospace;
+}
+
+.fixed-bottom {
+	background-color: rgba(0,0,0,.8);
+	color: #fff;
+}
+
+
+.btn-modal-launcher {
+	cursor: pointer;
+}
+
+
+
+

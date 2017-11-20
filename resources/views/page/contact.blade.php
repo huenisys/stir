@@ -7,7 +7,7 @@
 @endsection
 
 @section('body-container')
-<div class="row mt-4">
+<div class="row">
   <div class="col-sm-8 col-md-9">
     @include('stir::layout.contact._form')
   </div>

@@ -1,0 +1,10 @@
+// Your variable overrides
+// $body-bg: #000;
+// $body-color: red;
+$theme-colors: (
+  //"primary": #0074d9,
+  //"danger": #ff4136
+);
+
+// Bootstrap 4
+@import "~bootstrap/scss/bootstrap";

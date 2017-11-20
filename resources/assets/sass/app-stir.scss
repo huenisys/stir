@@ -4,18 +4,16 @@
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono:400,700");
 
-// Variables
-@import "custom";
-
-// Bootstrap 4
-@import "~bootstrap/scss/bootstrap";
+// Bootstrap 4 and custom
+@import "bootstrap";
 
 // BootstrapVue
 @import "~bootstrap-vue/dist/bootstrap-vue.css";
 
-// Main
-@import "main";
+@import "common";
 
 // Dashboard
 @import "dashboard";
 
+// Carousel
+@import "carousel";

@@ -6,7 +6,7 @@
 
 @section('body-container')
 
-<form method="POST" action="{{ route('register') }}" class="mt-4">
+<form method="POST" action="{{ route('register') }}">
     {{ csrf_field() }}
     <h2>Register</h2>
     <hr>

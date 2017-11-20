@@ -7,7 +7,7 @@
 @endsection
 
 @section('body-container')
-<h3 class="mt-4">Terms and Privacy</h3>
+<h3>Terms and Privacy</h3>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris in eros arcu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Sed aliquet vitae lorem ac tristique. Curabitur mollis libero at sem condimentum viverra. Integer bibendum ornare enim id lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec a justo commodo, aliquam neque id, fermentum arcu. Suspendisse cursus vehicula magna vel facilisis. Donec id tortor ut massa lacinia placerat.</p>
 

@@ -1,7 +1,7 @@
 @extends('stir::layout.index')
 
 @section('masthead')
-	@include('stir::master._navbar')
+	@include('stir::layout.navbar.index')
 @endsection
 
 @section('body-container')
@@ -52,7 +52,7 @@
 
 
     <div class="form-group row">
-      <div class="col-sm-10 ml-auto">
+      <div class="col-sm-10 ml-auto mb-4">
         <button type="submit" class="btn btn-primary">Reset Password</button>
       </div>
     </div>

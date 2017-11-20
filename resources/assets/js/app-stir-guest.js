@@ -10,18 +10,8 @@ Vue.use(BootstrapVue);
 
 /* eslint-disable no-new */
 const app = new Vue({
-	el: '#app',
+	el: '#guest',
 	router,
 	template: '<layout/>',
 	components: { layout }
 })
-
-window.$(function(){
-  $('#bookingModal').on('hide.bs.modal', function (event) {
-		var modal = $(this)
-		modal.find('.modal-title').text('Step 1')
-    location.hash = '/';
-    history.pushState({extraData: "some state info"}, '', '/');
-
-  })
-});

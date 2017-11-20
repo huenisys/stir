@@ -12,24 +12,20 @@
         <link href="{{mix('/css/app-stir.css')}}" rel="stylesheet" type="text/css">
         <link href="{{mix('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
         <style>
-        		body {
-        			padding: 3.5rem 0;
-        		}
+
             @stack('styles')
         </style>
     </head>
     <body x-app-env="{{ $app_env }}" x-subdomain="{{ $subdomain }}">
-
         @section('masthead')
         	@include('stir::layout.navbar.index')
-        	@include('stir::layout.carousel.index')
         @show
 
         @section('body')
-					<div class="container-fluid">
+					<div class="container-fluid body-fluid-wrap">
 						@yield('body-fluid')
 					</div>
-					<div class="container">
+					<div class="container body-container-wrap">
 						@yield('body-container')
 					</div>
         @show
