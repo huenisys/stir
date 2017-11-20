@@ -2,6 +2,11 @@
 
 @push('scripts')
 		<script type="text/javascript" src="{{mix('/js/app-stir-guest.js')}}"></script>
+		<script>
+			$('.navbar-brand').click(function(){
+				alert('clicked');
+			});
+		</script>
 @endpush
 
 @section('base_href', '/')

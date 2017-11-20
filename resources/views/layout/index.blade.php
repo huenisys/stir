@@ -12,11 +12,10 @@
         <link href="{{mix('/css/app-stir.css')}}" rel="stylesheet" type="text/css">
         <link href="{{mix('/css/font-awesome.css')}}" rel="stylesheet" type="text/css">
         <style>
-
             @stack('styles')
         </style>
     </head>
-    <body x-app-env="{{ $app_env }}" x-subdomain="{{ $subdomain }}">
+    <body x-app-env="{{ $app_env }}" x-subdomain="{{ $subdomain }}" class="@stack('body-class')">
         @section('masthead')
         	@include('stir::layout.navbar.index')
         @show

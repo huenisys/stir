@@ -32,8 +32,9 @@ $ ``php artisan migrate:refresh --seeder=StirSeeder``
 - update /webpack.mix.js like below
 ```js
 // huenisys/stir
-mix.autoload({
-	jquery: ['$', 'window.jQuery',"jQuery","window.$","jquery","window.jquery"],
+mix
+.autoload({
+	'jquery': ['jQuery', '$'],
 	'popper.js/dist/umd/popper.js': ['Popper'],
 	lodash: ['_']
 })
@@ -45,7 +46,7 @@ mix.autoload({
 .copyDirectory('resources/stir/assets/favicon', 'public/favicon')
 .sass('resources/stir/assets/sass/app-stir.scss', './public/css')
 .sass('resources/stir/assets/font-awesome-4.7.0/scss/font-awesome.scss', './public/css')
-.copy('resources/stir/assets/favicon.ico', 'public/favicon.ico')
+.copy('resources/stir/assets/favicon/favicon.ico', 'public/favicon.ico')
 .copy('resources/stir/assets/robots.txt', 'public/robots.txt')
 .copy('resources/stir/assets/.htaccess', 'public/.htaccess')
 .extract(['jquery','popper.js', 'bootstrap', 'lodash', 'vue', 'vue-router', 'bootstrap-vue'])

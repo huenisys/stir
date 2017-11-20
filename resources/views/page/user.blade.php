@@ -4,6 +4,10 @@
     <script type="text/javascript" src="{{mix('/js/app-stir-user.js')}}"></script>
 @endpush
 
+@push('body-class')
+body-dashboard
+@endpush
+
 @section('base_href', '/user/')
 
 @section('masthead')

@@ -1,12 +1,12 @@
 <template>
-	<div class="container-fluid">
+	<div class="container-fluid body-fluid-wrap">
 		<!-- nav -->
 		<navbar :currentUser="currentUser" />
 		<!-- nav -->
 		<div class="row">
 			<!-- sidebar -->
 
-			<div class="col-sm-3 col-md-2 d-none d-sm-block bg-light sidebar">
+			<div class="col-sm-3 col-md-2 d-none d-sm-block sidebar">
 				<sidebar :currentUser="currentUser" />
 			</div>
 
