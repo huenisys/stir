@@ -13,17 +13,18 @@ $ ``php artisan migrate:refresh --seeder=StirSeeder``
 - install node deps: $ ``yarn install`` after updating /package.json with below
 ```
 "devDependencies": {
-	"axios": "^0.16.2",
-	"bootstrap": "^4.0.0-beta",
+	"axios": "^0.17.1",
+	"bootstrap": "^4.0.0-beta.2",
 	"bootstrap-sass": "^3.3.7",
 	"cross-env": "^5.0.1",
 	"jquery": "^3.1.1",
 	"laravel-mix": "^1.5.0",
 	"lodash": "^4.17.4",
-	"popper.js": "^1.12.5",
-	"vue": "^2.5.2",
-	"vue-router": "^2.7.0",
-	"bootstrap-vue": "^1.0.0-beta.9"
+	"popper.js": "^1.13.0",
+	"vue": "^2.5.6",
+	"vuex": "^3.0.1",
+	"vue-router": "^3.0.1",
+	"bootstrap-vue": "^1.1.0"
 }
 ```
 - publish assets: $ ``php artisan vendor:publish --tag=stir-assets``
