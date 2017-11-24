@@ -19,7 +19,7 @@
   </div>
   <!-- email -->
   <div class="form-group">
-    <label for="question">Message</label>
+    <label for="question">Your Question</label>
     <textarea class="form-control" id="question" name="question" rows="7"></textarea>
   </div>
   <div class="form-group">

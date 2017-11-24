@@ -9,3 +9,5 @@
 @section('body-container')
   @include('stir::layout.carousel.index')
 @endsection
+
+

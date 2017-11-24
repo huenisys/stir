@@ -1,5 +1,7 @@
 @extends('stir::layout.index')
 
+@section('title', 'Login')
+
 @section('masthead')
 	@include('stir::layout.navbar.index')
 @endsection

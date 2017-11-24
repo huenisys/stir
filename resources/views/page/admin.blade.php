@@ -1,5 +1,7 @@
 @extends('stir::layout.index')
 
+@section('title', 'Admin Dashboard')
+
 @push('scripts')
     <script type="text/javascript" src="{{mix('/js/app-stir-admin.js')}}"></script>
 @endpush

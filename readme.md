@@ -85,3 +85,9 @@ For local dev, add these entries in composer.json
 STIR_NTFR_TO=paul+admin@huenits.com
 STIR_NTFR_CC=paul+cc@huenits.com
 ```
+
+### Composer
+
+- $ ``composer require guzzlehttp/guzzle`` # SparkPost requirement
+
+

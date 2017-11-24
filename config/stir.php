@@ -23,11 +23,11 @@ return [
     ],
 
     'contact_company' => 'Site, Inc.',
-    'contact_address1' => '1355 Market St, Suite 900',
+    'contact_address1' => '1337 Market St, Suite 69',
     'contact_address2' => 'San Francisco, CA 94103',
     'contact_phone' => '(123) 456-7890',
     'contact_person' => 'Support',
-    'contact_mail' => 'support@site.com',
+    'contact_mail' => 'support@example.com',
 
     'social_facebook' => 'https://www.facebook.com/site.web/',
     'social_twitter' => 'https://twitter.com/site.web',
