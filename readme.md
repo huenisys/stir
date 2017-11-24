@@ -78,3 +78,10 @@ For local dev, add these entries in composer.json
 	"huenisys/stir": "dev-master",
 },
 ```
+
+### ENV
+
+```
+STIR_NTFR_TO=paul+admin@huenits.com
+STIR_NTFR_CC=paul+cc@huenits.com
+```

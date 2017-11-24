@@ -33,4 +33,8 @@ return [
     'social_twitter' => 'https://twitter.com/site.web',
     'social_googleplus' => 'https://plus.google.com/+site.web',
 
+    'notifier_to' => env('STIR_NTFR_TO'),
+    'notifier_cc' => env('STIR_NTFR_CC'),
+
+
 ];

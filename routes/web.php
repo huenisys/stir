@@ -9,7 +9,21 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 	Route::get('features', 'PageController@getFeatures');
 	Route::get('faqs', 'PageController@getFaqs');
 	Route::get('contact', 'PageController@getContact');
+	Route::post('contact', 'FormSubmissionsController@contact');
+
 	Route::get('terms-and-privacy', 'PageController@getLegal')->name('legal');
+
+	$mailables = [
+		'ContactNotifier',
+		'ContactResponder',
+	];
+
+	foreach ($mailables as $mailable) {
+		$class = 'Stir\Mail\\'.$mailable;
+		Route::get('/mailable/'.$mailable, function () use ($class) {
+				return new $class();
+		});
+	}
 
 });
 
