@@ -1,4 +1,4 @@
-@extends('stir::layout.index')
+@extends('stir::admin.layout')
 
 @section('title', 'Admin Dashboard')
 
