@@ -26,18 +26,11 @@
 	import Bottombar from './bottombar'
 
 	export default {
-		data: () => ({
-			currentUser: {
-				id: '',
-				firstname: '',
-				lastname: '',
-				email: '',
-				address: '',
-				postcode: '',
-				phone: '',
-				type: '',
-			},
-		}),
+		computed: {
+			currentUser(){
+				return this.$store.state.auth.user
+			}
+		},
 		components: {
 			navbar: Navbar,
 			sidebar: Sidebar,
@@ -45,14 +38,7 @@
 		},
 		// Fetches user data when comp is created
 		created() {
-
-			window.axios.get('/get-me')
-			.then(res => {
-				this.currentUser = res.data;
-			})
-			.catch(e => {
-				this.errors.push(e)
-			})
+			this.$store.dispatch('auth/getCurrentUser')
 		}
 	}
 </script>

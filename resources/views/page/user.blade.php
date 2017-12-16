@@ -2,9 +2,9 @@
 
 @section('title', 'User Dashboard')
 
-@push('scripts')
+@section('primary-script')
     <script type="text/javascript" src="{{mix('/js/app-stir-user.js')}}"></script>
-@endpush
+@endsection
 
 @push('body-class')
 body-dashboard
@@ -16,5 +16,5 @@ body-dashboard
 @show
 
 @section('body')
-    <div id="app"></div>
+    <user></user>
 @endsection

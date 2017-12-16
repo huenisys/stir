@@ -2,9 +2,9 @@
 
 @section('title', 'Admin Dashboard')
 
-@push('scripts')
+@section('primary-script')
     <script type="text/javascript" src="{{mix('/js/app-stir-admin.js')}}"></script>
-@endpush
+@endsection
 
 @push('body-class')
 body-dashboard

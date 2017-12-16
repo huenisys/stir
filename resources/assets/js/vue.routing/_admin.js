@@ -1,21 +1,21 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Dashboard from '../vue.pages/Dashboard.admin'
-import Users from '../vue.pages/Users.admin'
-import UserAdd from '../vue.pages/UserAdd.admin'
-import UserEdit from '../vue.pages/UserEdit.admin'
+import a_Dashboard from '../vue.pages/a_Dashboard'
+import a_Users from '../vue.pages/a_Users'
+import a_UserAdd from '../vue.pages/a_UserAdd'
+import a_UserEdit from '../vue.pages/a_UserEdit'
 
-import p404 from '../vue.pages/p404'
+import g_404 from '../vue.pages/g_404'
 
 Vue.use(Router)
 
 export default new Router({
 	routes: [
 		{path: '', redirect: 'dashboard'},
-		{path: '/dashboard', component: Dashboard},
-		{path: '/users',component: Users},
-		{path: '/user/:id/edit', name: 'UserEdit', component: UserEdit},
-		{path: '/user', name: 'UserAdd', component: UserAdd},
-		{path: '*', component: p404}
+		{path: '/dashboard', component: a_Dashboard},
+		{path: '/users',component: a_Users},
+		{path: '/user/:id/edit', name: 'UserEdit', component: a_UserEdit},
+		{path: '/user', name: 'UserAdd', component: a_UserAdd},
+		{path: '*', component: g_404}
 	]
 })

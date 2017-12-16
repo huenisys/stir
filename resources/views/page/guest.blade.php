@@ -1,8 +1,8 @@
 @extends('stir::layout.index')
 
-@push('scripts')
+@section('primary-script')
 		<script type="text/javascript" src="{{mix('/js/app-stir-guest.js')}}"></script>
-@endpush
+@endsection
 
 @section('base_href', '/')
 
@@ -10,7 +10,7 @@
 @endpush
 
 @section('body-container')
-<div id="guest"></div>
+<guest></guest>
 @endsection
 
 

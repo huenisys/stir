@@ -8,23 +8,23 @@ Bootstrap Laravel 5 with common pages and authentication
 - add app provider: ``Stir\StirServiceProvider::class,``
 - setup a database: $ ``art vendor:publish --tag=stir-sqlite``
 - update /.env to use DB_CONNECTION=sqlite, delete all other DB config entries
-- do a fresh migration with seeds: 
+- do a fresh migration with seeds:
 $ ``php artisan migrate:refresh --seeder=StirSeeder``
 - install node deps: $ ``yarn install`` after updating /package.json with below
 ```
 "devDependencies": {
-	"axios": "^0.17.1",
-	"bootstrap": "^4.0.0-beta.2",
-	"bootstrap-sass": "^3.3.7",
-	"cross-env": "^5.0.1",
-	"jquery": "^3.1.1",
-	"laravel-mix": "^1.5.0",
-	"lodash": "^4.17.4",
-	"popper.js": "^1.13.0",
-	"vue": "^2.5.6",
-	"vuex": "^3.0.1",
-	"vue-router": "^3.0.1",
-	"bootstrap-vue": "^1.1.0"
+  "axios": "^0.17.1",
+  "bootstrap": "^4.0.0-beta.2",
+  "bootstrap-sass": "^3.3.7",
+  "cross-env": "^5.0.1",
+  "jquery": "^3.1.1",
+  "laravel-mix": "^1.5.0",
+  "lodash": "^4.17.4",
+  "popper.js": "^1.13.0",
+  "vue": "^2.5.11",
+  "vuex": "^3.0.1",
+  "vue-router": "^3.0.1",
+  "bootstrap-vue": "^1.4.0"
 }
 ```
 - publish assets: $ ``php artisan vendor:publish --tag=stir-assets``

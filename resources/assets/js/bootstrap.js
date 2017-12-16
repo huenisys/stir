@@ -11,7 +11,6 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
 
-
     window.Popper = Popper;
 
     require('bootstrap');
@@ -63,3 +62,9 @@ if (token) {
 //     key: 'your-pusher-key'
 // });
 
+// scroll to top
+$(document).ready(function(){
+  $('#go-top').click(function(){
+    $('html,body').animate({scrollTop: ($('#a-top').offset().top - 80)}, 'fast');
+  });
+});
