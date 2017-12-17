@@ -60,18 +60,15 @@
 <script>
 	export default {
 		data: () => ({
-			user: {
-				firstname: '',
-				lastname: '',
-				email: '',
-				address: '',
-				postcode: '',
-				phone: '',
-				type: '',
-			},
 			errors: [],
 			loading: false
 		}),
+
+    computed: {
+      user() {
+        return this.$store.state.auth.user
+      }
+    },
 
 		methods: {
 			updateUser: function(user) {
@@ -80,25 +77,12 @@
 				.put('/user', user)
 				.then(response => {
 					console.log('edited user', response.data);
-					this.$router.push('/dashboard');
+					this.$router.push('/home');
 				})
 				.catch(e => {
 					this.errors.push(e)
 				})
 			}
 		},
-
-		// Fetches users when the component is created.
-		created() {
-
-			window.axios.get('/get-me')
-			.then(res => {
-				this.user = res.data;
-			})
-			.catch(e => {
-				this.errors.push(e)
-			})
-
-		}
 	}
 </script>

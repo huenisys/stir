@@ -75,7 +75,12 @@ class UsersResourceController extends Controller
 	public function update(Request $request, User $user)
 	{
 
-		$user->fill($request->only('firstname', 'lastname', 'email', 'address', 'postcode', 'phone', 'type'));
+		//$user->fill($request->only('firstname', 'lastname', 'email', 'address', 'postcode', 'phone', 'type'));
+		foreach (
+			$request->only('firstname', 'lastname', 'email', 'address', 'postcode', 'phone')
+			as $k => $v) {
+			$user->$k = $v;
+		}
 		$user->save();
 		return $user;
 	}

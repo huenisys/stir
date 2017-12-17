@@ -44,8 +44,11 @@ class DashboardController extends Controller
 	public function update(Request $request)
 	{
 		$user = \Auth::user();
-
-		$user->fill($request->only('firstname', 'lastname', 'address', 'postcode', 'phone'));
+		foreach (
+			$request->only('firstname', 'lastname', 'address', 'postcode', 'phone')
+			as $k => $v) {
+			$user->$k = $v;
+		}
 		$user->save();
 		return $user;
 	}
