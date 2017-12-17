@@ -29,7 +29,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 
 //Stir::authRoutes();
 
-
 Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], function () {
 
 	Route::get('/', function () {

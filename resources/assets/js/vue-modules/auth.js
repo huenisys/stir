@@ -25,7 +25,7 @@ export default {
   },
   getters: {
     isAdmin(state) {
-      return state.auth.user.type === 'admin'
+      return state.user.type === 'admin'
     }
   },
   actions: {

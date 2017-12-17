@@ -1,28 +1,30 @@
 <template>
-  <div class="container-fluid body-fluid-wrap">
-    <!-- nav -->
+  <div>
+
     <navbar :user="currentUser" />
-    <!-- nav -->
-    <div class="row">
-      <!-- sidebar -->
 
-      <div class="col-sm-3 col-md-2 d-none d-sm-block sidebar">
-        <sidebar :user="currentUser" />
+    <div class="container-fluid body-fluid-wrap">
+      <div class="row pt-4">
+        <div class="col-2">
+          <sidebar :user="currentUser" />
+        </div>
+        <!-- /.col-3 -->
+        <div class="col-10">
+          <main role="main">
+            <router-view  />
+          </main>
+        </div>
+        <!-- /.col-9 -->
       </div>
+      <!-- /.row -->
+    </div><!-- /.container-fluid -->
 
-      <!-- sidebar -->
-      <main class="col-sm-9 ml-sm-auto col-md-10 pt-3" role="main">
-        <router-view  />
-      </main>
-    </div>
-    <bottombar />
   </div>
-  <!-- /.container-fluid -->
 </template>
 
 <script>
   import Navbar from './navbar'
-  import Sidebar from './sidebar.user'
+  import Sidebar from './sidebar.admin'
   import Bottombar from './bottombar'
 
   export default {

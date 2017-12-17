@@ -55,6 +55,7 @@ mix
 ```
 - update public folder: $ ``npm run dev`` or $ ``npm run prod``
 - remove Laravel's default root route and replace with Stir::authRoutes();
+- install laravel passport
 
 ### Default users
 
@@ -89,6 +90,7 @@ STIR_NTFR_CC=paul+cc@huenits.com
 ### Composer
 
 - $ ``composer require guzzlehttp/guzzle`` # SparkPost requirement
+- $ ``composer require laravel/passport`` # for api access to resources
 
 ### MySQL
 

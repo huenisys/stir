@@ -21,7 +21,6 @@
 					</div>
 				</div>
 
-
 				<!-- address -->
 				<div class="form-group row">
 					<label for="address" class="col-sm-2 col-form-label">Address</label>

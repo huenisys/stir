@@ -28,12 +28,6 @@ class DashboardController extends Controller
 		return view('stir::page.dashboard');
 	}
 
-
-	public function getMe()
-	{
-		return \Auth::user();
-	}
-
 	/**
 	 * Update the specified resource in storage.
 	 *
@@ -52,4 +46,9 @@ class DashboardController extends Controller
 		$user->save();
 		return $user;
 	}
+
+    public function getMe()
+    {
+      return \Auth::user();
+    }
 }
