@@ -3,7 +3,7 @@
 Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], function () {
 
 	// Route::get('/', 'PageController@getWelcome');
-	Route::get('dashboard', 'PageController@getDashboard')->name('dashboard')->middleware('auth');
+	// Route::get('dashboard', 'PageController@getDashboard')->name('dashboard')->middleware('auth');
 	Route::get('logout', 'PageController@getLogout')->middleware('guest');
 
 	Route::get('features', 'PageController@getFeatures');
@@ -36,10 +36,10 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 			return view('stir::page.guest');
 	});
 
-	Route::get('/get-me', 'UserController@getMe');
+	Route::get('/get-me', 'DashboardController@getMe');
 
-	Route::get('/user', 'UserController@index')->name('home');
-	Route::put('/user', 'UserController@update');
+	Route::get('/dashboard', 'DashboardController@index')->name('home');
+	Route::put('/user', 'DashboardController@update');
 
 	Route::get('/admin', 'AdminController@index')->name('admin');
 

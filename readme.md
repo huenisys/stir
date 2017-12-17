@@ -90,4 +90,15 @@ STIR_NTFR_CC=paul+cc@huenits.com
 
 - $ ``composer require guzzlehttp/guzzle`` # SparkPost requirement
 
+### MySQL
+
+```
+use Illuminate\Support\Facades\Schema;
+
+public function boot()
+{
+  Schema::defaultStringLength(191);
+}
+```
+
 

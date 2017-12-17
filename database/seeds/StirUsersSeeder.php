@@ -13,40 +13,24 @@ class StirUsersSeeder extends Seeder
     public function run()
     {
         User::create([
-            'name' => 'user',
+            'firstname'=> 'Guest',
+            'lastname'=> 'User',
+            'email'=> 'guest@example.com',
+            'password' => bcrypt('welcome1$'),
+            'type'=> 'guest',
+        ]);
+
+        User::create([
+            'firstname'=> 'User',
+            'lastname'=> 'User',
             'email'=> 'user@example.com',
             'password' => bcrypt('welcome1$')
         ]);
 
         User::create([
-            'name' => 'user1',
-            'email'=> 'user1@example.com',
-            'password' => bcrypt('welcome1$')
-        ]);
-
-        User::create([
-            'name' => 'user2',
-            'email'=> 'user2@example.com',
-            'password' => bcrypt('welcome1$')
-        ]);
-
-        User::create([
-            'name' => 'admin',
+            'firstname'=> 'Admin',
+            'lastname'=> 'User',
             'email'=> 'admin@example.com',
-            'type'=> 'admin',
-            'password' => bcrypt('welcome1$')
-        ]);
-
-        User::create([
-            'name' => 'admin1',
-            'email'=> 'admin1@example.com',
-            'type'=> 'admin',
-            'password' => bcrypt('welcome1$')
-        ]);
-
-        User::create([
-            'name' => 'admin2',
-            'email'=> 'admin2@example.com',
             'type'=> 'admin',
             'password' => bcrypt('welcome1$')
         ]);

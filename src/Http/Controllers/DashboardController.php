@@ -6,7 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class UserController extends Controller
+class DashboardController extends Controller
 {
 	/**
 	 * Create a new controller instance.
@@ -25,7 +25,7 @@ class UserController extends Controller
 	 */
 	public function index()
 	{
-		return view('stir::page.user');
+		return view('stir::page.dashboard');
 	}
 
 

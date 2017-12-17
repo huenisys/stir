@@ -9,8 +9,8 @@ Vue.use(Router)
 export default new Router({
 	//mode: 'history',
 	routes: [
-		{path: '', redirect: '/dashboard'},
-		{path: '/dashboard', component: u_Dashboard},
+		{path: '', redirect: '/home'},
+		{path: '/home', component: u_Dashboard},
 		{path: '/profile-edit', name: 'UserEdit', component: u_ProfileEdit, props: true},
 		{path: '*', component: g_404}
 	]

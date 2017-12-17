@@ -10,7 +10,7 @@
 body-dashboard
 @endpush
 
-@section('base_href', '/user/')
+@section('base_href', '/dashboard/')
 
 @section('masthead')
 @show

@@ -21,9 +21,9 @@
 				</li>
 			@if (Auth::check())
 				<li class="nav-item dropdown">
-					<a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="dropdown-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user fa-fw" aria-hidden="true"></i> [ {{ Auth::user()->email }} ]</a>
+					<a class="nav-item nav-link dropdown-toggle mr-md-2" href="#" id="dropdown-profile" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">[<i class="fa fa-user fa-fw" aria-hidden="true"></i> {{ Auth::user()->email }} ]</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdown-profile">
-						<a class="dropdown-item" href="/user#dashboard"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i> Dashboard</a>
+						<a class="dropdown-item" href="/dashboard#/home"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i> Dashboard</a>
 						<a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();"><i class="fa fa-sign-out fa-fw" aria-hidden="true"></i>Logout</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
 							{{ csrf_field() }}

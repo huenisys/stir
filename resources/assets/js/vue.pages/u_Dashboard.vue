@@ -1,14 +1,19 @@
 <template>
 	<div>
-		<h5>Dashboard [{{user.email}}]</h5>
-		<table class="table table-responsive table-bordered table-striped table-sm">
+		<h5 :title="user.type +': '+user.email">Dashboard</h5>
+		<table class="table table-responsive-xs table-hover table-striped table-sm">
+      <thead>
+        <tr>
+          <th colspan="2">Your Profile</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr><th>Type</th><td>{{user.type}}</td></tr>
-        <tr><th>First Name</th><td>{{user.firstname}}</td></tr>
-        <tr><th>Last Name</th><td>{{user.lastname}}</td></tr>
-        <tr><th>Phone</th><td>{{user.phone}}</td></tr>
-        <tr><th>Address</th><td>{{user.address}}</td></tr>
-        <tr><th>Postcode</th><td>{{user.postcode}}</td></tr>
+        <tr><td>Email</td><td>{{user.email}}</td></tr>
+        <tr><td>First Name</td><td>{{user.firstname}}</td></tr>
+        <tr><td>Last Name</td><td>{{user.lastname}}</td></tr>
+        <tr><td>Phone</td><td>{{user.phone}}</td></tr>
+        <tr><td>Address</td><td>{{user.address}}</td></tr>
+        <tr><td>Postcode</td><td>{{user.postcode}}</td></tr>
       </tbody>
     </table>
 	</div>

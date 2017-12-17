@@ -7,12 +7,10 @@
 			<div class="collapse navbar-collapse" id="navbarsExampleDefault">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item"><a class="nav-link" href="/" target="_top">Home</a></li>
-					<li class="nav-item"><router-link class="nav-link" to="/dashboard">Dashboard</router-link></li>
-					<li class="nav-item" v-if="isAdmin"><a class="nav-link" href="/admin">[ Admin ]</a></li>
 				</ul>
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item"><a href="javascript:void(0);" class="nav-link" v-on:click="logoutUser">[ <span class="text-danger">{{currentUser.email}}</span> ]( <i class="text-success">logout</i> )</a></li>
-				</ul>
+				<span class="navbar-text">
+					[ <a href="/dashboard"><fa class="fa-user" /> {{user.email}}</a> ]( <a href="javascript:void(0);" v-on:click="logoutUser"><i class="text-warning">logout</i></a> )
+				</span>
 			</div>
 		</nav>
 </template>
@@ -28,14 +26,7 @@ body {
 <script>
 
 	export default {
-		data: () => ({
-		}),
-		computed: {
-			isAdmin: function() {
-				return this.currentUser.type == 'admin';
-			}
-		},
-		props: ['currentUser'],
+		props: ['user'],
 		methods: {
 			logoutUser: function() {
 				window.axios.post('/logout').then(function(res1) {

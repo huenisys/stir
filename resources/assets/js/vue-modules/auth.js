@@ -23,6 +23,11 @@ export default {
       state.errors.push(payload);
     }
   },
+  getters: {
+    isAdmin(state) {
+      return state.auth.user.type === 'admin'
+    }
+  },
   actions: {
     getCurrentUser(context) {
       window.axios.get('/get-me')

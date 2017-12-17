@@ -15,7 +15,7 @@ class User extends Authenticatable
 	 * @var array
 	 */
 	protected $fillable = [
-		'password', 'firstname', 'lastname', 'email', 'address', 'postcode', 'phone', 'type'
+		'password', 'firstname', 'lastname', 'email', 'phone', 'type'
 	];
 
 	/**
@@ -28,20 +28,4 @@ class User extends Authenticatable
 		'remember_token',
 	];
 
-	// when first name was filled during registration
-	// we capture it and update first and last name accordingly
-	public function setNameAttribute($value)
-	{
-		$text = explode(" ", $value);
-		$this->attributes['name'] = $value;
-		$this->attributes['firstname'] = $text[0];
-		$this->attributes['lastname'] = end($text);
-	}
-
-	// just make username a copy of email
-	public function setEmailAttribute($value)
-	{
-		$this->attributes['email'] = $value;
-		$this->attributes['username'] = $value;
-	}
 }

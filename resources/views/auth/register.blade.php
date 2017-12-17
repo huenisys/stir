@@ -13,19 +13,6 @@
     <h2>Register</h2>
     <hr>
 
-    <!-- name -->
-    <div class="form-group row">
-      <label for="name" class="col-sm-2 col-form-label">Name</label>
-      <div class="col-sm-10">
-        <input type="text" id="name" name="name" class="form-control" placeholder="Name" required="" autofocus="" value="{{ old('name') }}">
-        @if ($errors->has('name'))
-        <span class="help-block">
-            <small class="form-text text-danger">{{ $errors->first('name') }}</small>
-        </span>
-        @endif
-      </div>
-    </div>
-
     <!-- email -->
     <div class="form-group row">
       <label for="email" class="col-sm-2 col-form-label">Email</label>

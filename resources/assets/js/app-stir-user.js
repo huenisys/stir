@@ -3,7 +3,7 @@ require('./bootstrap');
 
 import Vuex from 'vuex'
 import store from './store'
-import layout from './vue.layout/_user'
+import layout from './vue.dashboard-layout/_user'
 import router from './vue.routing/_user'
 
 window.Vue.use(Vuex);
