@@ -10,6 +10,7 @@
 					<label for="type" class="col-sm-2 col-form-label">Type</label>
 					<div class="col-sm-10">
 						<select class="custom-select" name="type" v-model="user.type">
+							<option value="guest">guest</option>
 							<option value="user">user</option>
 							<option value="admin">admin</option>
 						</select>

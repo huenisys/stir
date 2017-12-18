@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h5 :title="user.type +': '+user.email">Dashboard</h5>
+		<h5 :title="user.type +': '+user.email">User Dashboard</h5>
 		<table class="table table-responsive-xs table-hover table-striped table-sm">
       <thead>
         <tr>

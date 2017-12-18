@@ -40,7 +40,7 @@ class ContactResponder extends Mailable
 	{
 		return $this
 		->replyTo(config('stir.notifier_to'))
-		->subject('Stir Contact Request')
+		->subject(config('app.name').' Contact Request')
 		->markdown('stir::emails.ContactResponder');
 	}
 }

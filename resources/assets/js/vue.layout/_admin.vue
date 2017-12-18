@@ -24,7 +24,7 @@
 
 <script>
   import Navbar from './navbar'
-  import Sidebar from './sidebar.admin'
+  import Sidebar from './sidebar'
   import Bottombar from './bottombar'
 
   export default {

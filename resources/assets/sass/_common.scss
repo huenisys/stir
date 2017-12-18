@@ -13,17 +13,21 @@ body {
 	padding-bottom: 1rem;
 }
 
-.navbar ~ .body-container-wrap,
-.navbar ~ .body-fluid-wrap {
+.navbar + .body-container-wrap {
 	margin-top:4.5rem;
 }
 
-.navbar ~ .body-fluid-wrap {
+.navbar + .body-fluid-wrap,
+.navbar + #myAlerts  {
 	margin-top:3.5rem;
+}
+.navbar + .body-fluid-wrap,
+.navbar + .body-container-wrap {
+	padding-bottom: 3.5rem;
 }
 
 @media (max-width: 575px) {
-	.navbar ~ .body-container-wrap {
+	.navbar + .body-container-wrap {
 		margin-top:3.5rem;
 	}
 }

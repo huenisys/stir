@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<h2>Administration</h2>
+		<h2>Admin Dashboard</h2>
 		<section class="row text-center placeholders">
 			<div class="col-xs-4 col-sm-3 col-md-2 col-lg-1 placeholder">
 				<router-link to="/users"><img src="data:image/gif;base64,R0lGODlhAQABAIABAAJ12AAAACwAAAAAAQABAAACAkQBADs=" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"></router-link>

@@ -10,7 +10,7 @@ export default new Router({
 	//mode: 'history',
 	routes: [
 		{path: '', redirect: '/home'},
-		{path: '/home', component: u_Dashboard},
+		{path: '/home', name:'user-dashboard', component: u_Dashboard},
 		{path: '/profile-edit', name: 'UserEdit', component: u_ProfileEdit, props: true},
 		{path: '*', component: g_404}
 	]

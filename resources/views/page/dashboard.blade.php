@@ -1,4 +1,4 @@
-@extends('stir::layout.index')
+@extends('stir::layout.dashboard')
 
 @section('title', 'User Dashboard')
 

@@ -32,7 +32,13 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], function () {
 
 	Route::get('/', function () {
-			return view('stir::page.guest');
+
+		$newContactAlertMessage = Request::session()->pull('newContactAlertMessage');
+
+		return view('stir::page.guest', compact(
+			'newContactAlertMessage'
+		));
+
 	});
 
 	Route::get('/get-me', 'DashboardController@getMe');

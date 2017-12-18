@@ -22,6 +22,8 @@
 					@include('stir::layout.navbar.index')
 				@show
 
+				@include('stir::layout/alerts')
+
 				@section('body')
 					<div class="container-fluid body-fluid-wrap">
 						@yield('body-fluid')
@@ -43,6 +45,7 @@
 				@show
 
 				@stack('scripts')
+
 
 		</body>
 </html>
