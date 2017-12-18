@@ -25,4 +25,13 @@
   <div class="form-group">
     <button type="submit" class="btn btn-primary">Submit</button>
   </div>
+
+{!! app('captcha')->render(); !!}
+
+  <button
+  class="g-recaptcha"
+  data-sitekey="6Lf9cT0UAAAAAFc3nfiE2UYm9cK7oM-xFi4PY5tX"
+  data-callback="YourOnSubmitFn">
+  Submit
+  </button>
 </form>

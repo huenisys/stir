@@ -6,6 +6,10 @@
 	@include('stir::layout.navbar.index')
 @endsection
 
+@push('beforehead_scripts')
+  <script src='https://www.google.com/recaptcha/api.js'></script>
+@endpush
+
 @section('body-container')
 <div class="row">
   <div class="col-sm-8 col-md-9">

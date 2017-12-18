@@ -4,8 +4,12 @@ Bootstrap Laravel 5 with common pages and authentication
 
 ## Installation
 
-- add this package: $ ``composer require "huenisys/stir"``
-- add app provider: ``Stir\StirServiceProvider::class,``
+- add this package:
+  - $ ``composer require "huenisys/stir"``
+  - $ ``composer require albertcht/invisible-recaptcha``
+- add app provider:
+  - ``Stir\StirServiceProvider::class,``
+  - ``AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,``
 - setup a database: $ ``art vendor:publish --tag=stir-sqlite``
 - update /.env to use DB_CONNECTION=sqlite, delete all other DB config entries
 - do a fresh migration with seeds:
@@ -90,7 +94,7 @@ STIR_NTFR_CC=paul+cc@huenits.com
 ### Composer
 
 - $ ``composer require guzzlehttp/guzzle`` # SparkPost requirement
-- $ ``composer require laravel/passport`` # for api access to resources
+- $ ``composer require albertcht/invisible-recaptcha``
 
 ### MySQL
 

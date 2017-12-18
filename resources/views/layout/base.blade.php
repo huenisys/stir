@@ -14,6 +14,7 @@
 				<style>
 						@stack('styles')
 				</style>
+				@stack('beforehead_scripts')
 		</head>
 		<body x-app-env="{{ $app_env }}" x-subdomain="{{ $subdomain }}" class="@stack('body-class')">
 				<a id="a-top" name="top" class="d-block"></a>
