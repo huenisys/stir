@@ -79,7 +79,7 @@ class StirServiceProvider extends ServiceProvider
         ], 'stir-config');
 
         $this->publishes([
-            __DIR__.'/../resources/assets' => resource_path('stir/assets'),
+            __DIR__.'/../resources/assets' => resource_path('assets/stir'),
         ], 'stir-assets');
 
     }

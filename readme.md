@@ -47,21 +47,21 @@ $ ``php artisan migrate:refresh --seeder=StirSeeder``
 // huenisys/stir
 mix
 .autoload({
-	'jquery': ['jQuery', '$'],
-	'popper.js/dist/umd/popper.js': ['Popper'],
-	lodash: ['_']
+  'jquery': ['jQuery', '$'],
+  'popper.js/dist/umd/popper.js': ['Popper'],
+  lodash: ['_']
 })
-.js(['resources/stir/assets/js/app-stir-guest.js'], './public/js')
-.js(['resources/stir/assets/js/app-stir-admin.js'], './public/js')
-.js(['resources/stir/assets/js/app-stir-user.js'], './public/js')
-.copyDirectory('resources/stir/assets/font-awesome-4.7.0/fonts', 'public/fonts')
-.copyDirectory('resources/stir/assets/images', 'public/images')
-.copyDirectory('resources/stir/assets/favicon', 'public/favicon')
-.sass('resources/stir/assets/sass/app-stir.scss', './public/css')
-.sass('resources/stir/assets/font-awesome-4.7.0/scss/font-awesome.scss', './public/css')
-.copy('resources/stir/assets/favicon/favicon.ico', 'public/favicon.ico')
-.copy('resources/stir/assets/robots.txt', 'public/robots.txt')
-.copy('resources/stir/assets/.htaccess', 'public/.htaccess')
+.js(['resources/assets/stir/js/app-stir-guest.js'], './public/js')
+.js(['resources/assets/stir/js/app-stir-admin.js'], './public/js')
+.js(['resources/assets/stir/js/app-stir-user.js'], './public/js')
+.copyDirectory('resources/assets/stir/font-awesome-4.7.0/fonts', 'public/fonts')
+.copyDirectory('resources/assets/stir/images', 'public/images')
+.copyDirectory('resources/assets/stir/favicon', 'public/favicon')
+.sass('resources/assets/stir/sass/app-stir.scss', './public/css')
+.sass('resources/assets/stir/font-awesome-4.7.0/scss/font-awesome.scss', './public/css')
+.copy('resources/assets/stir/favicon/favicon.ico', 'public/favicon.ico')
+.copy('resources/assets/stir/robots.txt', 'public/robots.txt')
+.copy('resources/assets/stir/.htaccess', 'public/.htaccess')
 .extract(['jquery','popper.js', 'bootstrap', 'lodash', 'vue', 'vue-router', 'bootstrap-vue'])
 .sourceMaps()
 .version();
