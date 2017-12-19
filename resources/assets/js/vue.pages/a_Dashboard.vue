@@ -13,7 +13,7 @@
 </template>
 
 <script>
-	import Users from './Users.admin';
+	import Users from './a_Users';
 
 	export default {
 		components:{
