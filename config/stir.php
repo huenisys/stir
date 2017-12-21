@@ -36,5 +36,8 @@ return [
     'notifier_to' => env('STIR_NTFR_TO'),
     'notifier_cc' => env('STIR_NTFR_CC'),
 
+    'gcapkey' => env('GRECAPTCHA_KEY'),
+    'gcapsecret' => env('GRECAPTCHA_SECRET'),
+
 
 ];

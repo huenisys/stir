@@ -1,5 +1,5 @@
 <h3>Contact Us</h3>
-<form id="contactForm" method="post">
+<form class="grecaptcha-form" id="contactForm" method="POST">
 	{{ csrf_field() }}
 
 	@if ($errors->any())
@@ -15,81 +15,65 @@
 			<!-- name -->
 			<div class="form-group">
 				<label for="name">Name</label>
-				<input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
+				<input type="text" class="form-control" id="name" name="name" placeholder="Enter name" value="{{old('name')}}">
 			</div>
 		</div><!-- /.col-md -->
 		<div class="col-md">
 			<!-- email -->
 			<div class="form-group">
 				<label for="email">Email address</label>
-				<input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+				<input type="email" class="form-control" id="email" name="email" placeholder="Enter email" value="{{old('email')}}">
 			</div>
 		</div><!-- /.col-md -->
 	</div>
 	<!-- email -->
 	<div class="form-group">
 		<label for="question">Your Question</label>
-		<textarea class="form-control" id="question" name="question" rows="7"></textarea>
+		<textarea class="form-control" id="question" name="question" rows="7">{{old('question')}}</textarea>
 	</div>
-
 
 	<div class="form-group d-flex justify-content-between">
 		<div>
-			<button class="btn btn-primary" type="submit">Submit</button>
+			<button type="submit" class="btn btn-primary" id='contactSubmit'>Submit</button>
 		</div>
-		<div id ="contact_recaptcha_container" class="d-inline-block" style="position:relative">
-		</div>
-
 	</div>
-
 </form>
 
-<form action="javascript:alert(grecaptcha.getResponse(widgetId1));" id="form1">
-	<input type="text" id="g-recaptcha-response" name="g-recaptcha-response">
-	<div id="recaptcha1"></div>
-	<input type="submit">
+<form action="/testpost" class="grecaptcha-form" method="POST">
+	{{ csrf_field() }}
+	<input type="text" name="input1">
+	<button type="submit" class="btn btn-primary" id='form2Submit'>Submit</button>
 </form>
-<form action="javascript:grecaptcha.reset(widgetId2);" id="form2">
-	<div id="recaptcha2"></div>
-	<input type="submit">
-</form>
-<form action="?" method="POST" id="form3">
-	<div id="recaptcha3"></div>
-	<input type="submit">
-</form>
-
-
 
 	<!-- add google recaptcha -->
 	@push('scripts')
-	<script>
-    var verifyCallback = function(response) {
-      alert('verifyCallback called: '+response);
-      window.axios.get('verify-contact-recaptcha/'+response)
-      	.then(function success(res){
-      		console.log('verify-contact-recaptcha/:', res);
-      	})
-    };
-    var widgetId1;
-    var widgetId2;
-		var onloadCallback = function() {
+		<script type="text/javascript">
+				var setupGrecaptchaForms = function() {
 
-			widgetId1 = grecaptcha.render('recaptcha1', {
-			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT',
-			  'theme' : 'light',
-			 	'callback' : verifyCallback,
+					$('.grecaptcha-form').each(function(i, em){
+						// finds anything with type=submit
+						em.onSubmit = function(token) {
+							$(em).submit();
+						};
 
-			});
-			widgetId2 = grecaptcha.render(document.getElementById('recaptcha2'), {
-			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT'
-			});
-			grecaptcha.render('recaptcha3', {
-			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT',
-			  'callback' : verifyCallback,
-			  'theme' : 'dark'
-			});
-		};
-	</script>
+						grecaptcha.render($(em).find('[type=submit]')[0], {
+							'sitekey' : "{{config('stir.gcapkey')}}",
+							'callback' : em.onSubmit,
+							'badge': 'inline'
+						});
+					})
+				};
+		</script>
 
-	<script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+		<script src='https://www.google.com/recaptcha/api.js?onload=setupGrecaptchaForms&render=explicit' async defer>
+		</script>
+	@endpush
+
+	@push('styles')
+	<style>
+		/*hides badge*/
+		.grecaptcha-badge {
+			display:none
+		}
+	</style>
 	@endpush

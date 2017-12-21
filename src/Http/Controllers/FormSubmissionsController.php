@@ -13,13 +13,16 @@ class FormSubmissionsController extends Controller
 
 		public function contact(Request $request) {
 			$contactRequest = $request->all();
+			//dd($request->all());
 
 			$request->validate([
 				'name' => 'required',
 				'email' => 'required|email',
 				'question' => 'required',
-				//'g-recaptcha-response' => 'required|captcha'
+				'g-recaptcha-response' => ['required', new \Stir\Rules\Grecaptcha]
 			]);
+
+			//$request->flash();
 
 			$request->session()->flash('newContactAlertMessage', 'Your Contact Request was received. One of our representatives will contact you soon. For reference, copy was sent to your mail.');
 

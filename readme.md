@@ -36,6 +36,7 @@ $ ``php artisan migrate:refresh --seeder=StirSeeder``
 - publish assets: $ ``php artisan vendor:publish --tag=stir-assets``
 - replace favicon.ico, robots.txt with your own in the /resources/stir folder
 - update /webpack.mix.js like below
+
 ```js
 // huenisys/stir
 mix
@@ -77,7 +78,8 @@ The service provider replaces the guest middleware with
 ### Author notes
 
 For local dev, add these entries in composer.json
-```
+
+```json
 "repositories": [
 	{"type": "path", "url": "../packages/stir"}
 ],
@@ -100,13 +102,65 @@ STIR_NTFR_CC=paul+cc@huenits.com
 
 ### MySQL
 
-```
+```php
 use Illuminate\Support\Facades\Schema;
 
 public function boot()
 {
   Schema::defaultStringLength(191);
 }
+```
+
+### using Invisible Recaptcha
+
+- add configs:
+
+```
+GRECAPTCHA_KEY=
+GRECAPTCHA_SECRET=
+```
+- use validation rule like below:
+
+```php
+'g-recaptcha-response' => ['required', new \Stir\Rules\Grecaptcha]
+```
+- add class grecaptcha-form to form tag
+- make sure there's a submit button of type=submit
+- add below snippet to page
+
+```html
+  <!-- add google recaptcha -->
+  @push('scripts')
+    <script type="text/javascript">
+        var setupGrecaptchaForms = function() {
+
+          $('.grecaptcha-form').each(function(i, em){
+            // finds anything with type=submit
+            em.onSubmit = function(token) {
+              $(em).submit();
+            };
+
+            grecaptcha.render($(em).find('[type=submit]')[0], {
+              'sitekey' : "{{config('stir.gcapkey')}}",
+              'callback' : em.onSubmit,
+              'badge': 'inline'
+            });
+          })
+        };
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js?onload=setupGrecaptchaForms&render=explicit' async defer>
+    </script>
+  @endpush
+
+  @push('styles')
+  <style>
+    /*hides badge*/
+    .grecaptcha-badge {
+      display:none
+    }
+  </style>
+  @endpush
 ```
 
 

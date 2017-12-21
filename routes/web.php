@@ -10,21 +10,6 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 	Route::get('faqs', 'PageController@getFaqs');
 	Route::get('contact', 'PageController@getContact');
 	Route::post('contact', 'FormSubmissionsController@contact');
-
-	Route::get('verify-contact-recaptcha/{gresponse}', function($gresponse){
-
-		$client = new \GuzzleHttp\Client();
-
-		$response = $client->request('POST', 'https://www.google.com/recaptcha/api/siteverify', [
-		    'form_params' => [
-		      'secret' => '6Lc54j0UAAAAABg2QrtXALgGxEkQRvDtN_EfR1GQ',
-		      'response' => $gresponse
-		    ]
-		]);
-
-		return $response;
-	});
-
 	Route::get('terms-and-privacy', 'PageController@getLegal')->name('legal');
 
 	$mailables = [
