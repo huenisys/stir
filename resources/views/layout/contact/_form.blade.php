@@ -67,7 +67,7 @@
       alert('verifyCallback called: '+response);
       window.axios.get('verify-contact-recaptcha/'+response)
       	.then(function success(res){
-      		alert(res);
+      		console.log('verify-contact-recaptcha/:', res);
       	})
     };
     var widgetId1;
