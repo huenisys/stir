@@ -113,6 +113,8 @@ public function boot()
 
 ### using Invisible Recaptcha
 
+- demo: [/multirecaptcha](/multirecaptcha)
+
 - add configs:
 
 ```

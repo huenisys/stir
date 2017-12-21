@@ -12,6 +12,16 @@ Route::group(['middleware' => ['web'], 'namespace' => 'Stir\Http\Controllers'], 
 	Route::post('contact', 'FormSubmissionsController@contact');
 	Route::get('terms-and-privacy', 'PageController@getLegal')->name('legal');
 
+	//demos
+	Route::view('/multirecaptcha', 'stir::page.multirecaptcha');
+	Route::post('/multirecaptcha', function(){
+			request()->validate([
+				'input1' => 'required',
+				'g-recaptcha-response' => ['required', new \Stir\Rules\Grecaptcha]
+			]);
+			return redirect('/multirecaptcha')->withInput();
+	});
+
 	$mailables = [
 		'ContactNotifier',
 		'ContactResponder',

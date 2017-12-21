@@ -38,42 +38,35 @@
 		</div>
 	</div>
 </form>
-
-<form action="/testpost" class="grecaptcha-form" method="POST">
-	{{ csrf_field() }}
-	<input type="text" name="input1">
-	<button type="submit" class="btn btn-primary" id='form2Submit'>Submit</button>
-</form>
-
+@push('scripts')
 	<!-- add google recaptcha -->
-	@push('scripts')
-		<script type="text/javascript">
-				var setupGrecaptchaForms = function() {
+	<script type="text/javascript">
+			var setupGrecaptchaForms = function() {
 
-					$('.grecaptcha-form').each(function(i, em){
-						// finds anything with type=submit
-						em.onSubmit = function(token) {
-							$(em).submit();
-						};
+				$('.grecaptcha-form').each(function(i, em){
+					// finds anything with type=submit
+					em.onSubmit = function(token) {
+						$(em).submit();
+					};
 
-						grecaptcha.render($(em).find('[type=submit]')[0], {
-							'sitekey' : "{{config('stir.gcapkey')}}",
-							'callback' : em.onSubmit,
-							'badge': 'inline'
-						});
-					})
-				};
-		</script>
+					grecaptcha.render($(em).find('[type=submit]')[0], {
+						'sitekey' : "{{config('stir.gcapkey')}}",
+						'callback' : em.onSubmit,
+						'badge': 'inline'
+					});
+				})
+			};
+	</script>
 
-		<script src='https://www.google.com/recaptcha/api.js?onload=setupGrecaptchaForms&render=explicit' async defer>
-		</script>
-	@endpush
+	<script src='https://www.google.com/recaptcha/api.js?onload=setupGrecaptchaForms&render=explicit' async defer>
+	</script>
+@endpush
 
-	@push('styles')
-	<style>
-		/*hides badge*/
-		.grecaptcha-badge {
-			display:none
-		}
-	</style>
-	@endpush
+@push('styles')
+<style>
+	/*hides badge*/
+	.grecaptcha-badge {
+		display:none
+	}
+</style>
+@endpush
