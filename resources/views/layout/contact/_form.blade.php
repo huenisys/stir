@@ -32,15 +32,64 @@
 		<textarea class="form-control" id="question" name="question" rows="7"></textarea>
 	</div>
 
-	<!-- add google recaptcha -->
+
 	<div class="form-group d-flex justify-content-between">
 		<div>
 			<button class="btn btn-primary" type="submit">Submit</button>
 		</div>
-		<div class="d-inline-block" style="position:relative">
-			@captcha()
+		<div id ="contact_recaptcha_container" class="d-inline-block" style="position:relative">
 		</div>
 
 	</div>
 
 </form>
+
+<form action="javascript:alert(grecaptcha.getResponse(widgetId1));" id="form1">
+	<input type="text" id="g-recaptcha-response" name="g-recaptcha-response">
+	<div id="recaptcha1"></div>
+	<input type="submit">
+</form>
+<form action="javascript:grecaptcha.reset(widgetId2);" id="form2">
+	<div id="recaptcha2"></div>
+	<input type="submit">
+</form>
+<form action="?" method="POST" id="form3">
+	<div id="recaptcha3"></div>
+	<input type="submit">
+</form>
+
+
+
+	<!-- add google recaptcha -->
+	@push('scripts')
+	<script>
+    var verifyCallback = function(response) {
+      alert('verifyCallback called: '+response);
+      window.axios.get('verify-contact-recaptcha/'+response)
+      	.then(function success(res){
+      		alert(res);
+      	})
+    };
+    var widgetId1;
+    var widgetId2;
+		var onloadCallback = function() {
+
+			widgetId1 = grecaptcha.render('recaptcha1', {
+			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT',
+			  'theme' : 'light',
+			 	'callback' : verifyCallback,
+
+			});
+			widgetId2 = grecaptcha.render(document.getElementById('recaptcha2'), {
+			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT'
+			});
+			grecaptcha.render('recaptcha3', {
+			  'sitekey' : '6Lc54j0UAAAAAFEE7aZvCSdwkLfkJQb48HRztTNT',
+			  'callback' : verifyCallback,
+			  'theme' : 'dark'
+			});
+		};
+	</script>
+
+	<script src='https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit' async defer></script>
+	@endpush

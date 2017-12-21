@@ -6,19 +6,12 @@ Bootstrap Laravel 5 with common pages and authentication
 
 - add this package:
   - $ ``composer require "huenisys/stir"``
-  - $ ``composer require albertcht/invisible-recaptcha``
-  - ```
-INVISIBLE_RECAPTCHA_SITEKEY=6Lf9cT0UAAAAAFc3nfiE2UYm9cK7oM-xFi4PY5tX
-INVISIBLE_RECAPTCHA_SECRETKEY=6Lf9cT0UAAAAAK4fnIQJ476yY39ORRtCwoxWhAiS
-INVISIBLE_RECAPTCHA_BADGEHIDE=false
-INVISIBLE_RECAPTCHA_DEBUG=
-INVISIBLE_RECAPTCHA_DATABADGE=inline
-INVISIBLE_RECAPTCHA_TIMEOUT=
-```
+  - $ ``composer require guzzlehttp/guzzle``
+  -
+
 
 - add app provider:
   - ``Stir\StirServiceProvider::class,``
-  - ``AlbertCht\InvisibleReCaptcha\InvisibleReCaptchaServiceProvider::class,``
 - setup a database: $ ``art vendor:publish --tag=stir-sqlite``
 - update /.env to use DB_CONNECTION=sqlite, delete all other DB config entries
 - do a fresh migration with seeds:
