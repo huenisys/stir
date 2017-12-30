@@ -5,11 +5,11 @@
 
     <div class="container-fluid body-fluid-wrap">
       <div class="row pt-4">
-        <div class="col-2">
+        <div class="col-xs-1 col-sm-2 col-md-3">
           <sidebar :user="currentUser" />
         </div>
         <!-- /.col-3 -->
-        <div class="col-10">
+        <div class="col-xs-11 col-sm-10 col-md-9">
           <main role="main">
             <router-view  />
           </main>
